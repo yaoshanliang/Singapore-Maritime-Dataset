@@ -35,7 +35,7 @@ import pandas as pd
 import argparse
 
 
-GT_FILES_PATHS_LIST = ["data/videos/NIR/ObjectGT", "data/videos/VIS_Onshore/ObjectGT", "data/videos/VIS_Onboard/ObjectGT"]
+GT_FILES_PATHS_LIST = ["videos/NIR/ObjectGT", "videos/VIS_Onshore/ObjectGT", "videos/VIS_Onboard/ObjectGT"]
 
 class Frame:
     """
@@ -566,9 +566,10 @@ args = parser.parse_args()
 if(args.inputDir is None):
     args.inputDir = os.getcwd()
 if(args.outputDir is None):
-    args.outputDir = args.inputDir# + "/labels.csv"
+    args.outputDir = "data"
 if(args.framesDir is None):
-    args.framesDir = os.getcwd()
+    args.framesDir = "data"
+
 
 assert(os.path.isdir(args.inputDir))
 assert(os.path.isdir(args.outputDir))
